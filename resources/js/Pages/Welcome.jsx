@@ -1,13 +1,16 @@
 import { Head } from "@inertiajs/react";
-import PortfolioNav from "@/Components/Welcome/PortfolioNav";
+import PortfolioLayout from "@/Layouts/PortfolioLayout";
 import PortfolioHero from "@/Components/Welcome/PortfolioHero";
+import PortfolioProjectsSection from "@/Components/Welcome/PortfolioProjectsSection";
 
 export default function Welcome({ auth }) {
     return (
         <>
-            <Head title="Bem-vindo(a)" />
-            <PortfolioNav auth={auth}></PortfolioNav>
-            <PortfolioHero></PortfolioHero>
+            <PortfolioLayout auth={auth}>
+                <Head title="Bem-vindo(a)" />
+                <PortfolioHero />
+                <PortfolioProjectsSection />
+            </PortfolioLayout>
         </>
     );
 }

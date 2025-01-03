@@ -5,9 +5,9 @@ import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-i
 export default function PortfolioHero() {
 
     const socialLinks = [
-        { name: 'github', url: 'https://github.com/UltraGalaxyBro' },
-        { name: 'linkedin', url: 'https://www.linkedin.com/in/pablo-nogueira-de-faria' },
-        { name: 'whatsapp', url: 'https://wa.me/+5562999643899' },
+        { name: 'github', url: 'https://github.com/UltraGalaxyBro', color: '#FFFFFF' },
+        { name: 'linkedin', url: 'https://www.linkedin.com/in/pablo-nogueira-de-faria', color: '#0077B5' },
+        { name: 'whatsapp', url: 'https://wa.me/+5562999643899', color: '#25D366' },
     ];
 
     return (
@@ -48,13 +48,16 @@ export default function PortfolioHero() {
                     </h1>
 
                     <p className="text-xl md:text-2xl text-gray-300">
-                        Transformando ideias em experiências digitais incríveis com foco em design e performance
+                        Transformando ideias em experiências digitais, aplico na prática tudo o que aprendo. Seja para fortalecer ainda mais meu conhecimento ou para contribuir na vida de alguém.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-                        <button className="px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition-colors">
+                        <a href="#portfolio" className="px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition-colors">
                             Ver Projetos
-                        </button>
+                        </a>
+                        <a href="#" className="px-8 py-4 bg-purple-500 hover:bg-purple-600 rounded-lg font-medium transition-colors">
+                            Baixar Currículo
+                        </a>
                     </div>
 
                     <div className="flex justify-center gap-6 pt-8">
@@ -63,10 +66,14 @@ export default function PortfolioHero() {
                                 key={social.name}
                                 href={social.url}
                                 target="_blank"
+                                title={`Contato sugerido por ${social.name}`}
                                 rel="noopener noreferrer"
-                                className="text-gray-400 hover:text-white transition-colors"
+                                style={{ color: 'gray' }}
+                                className="text-gray-400 transition-colors hover:text-gray-400"
+                                onMouseEnter={(e) => (e.currentTarget.style.color = social.color)}
+                                onMouseLeave={(e) => (e.currentTarget.style.color = 'gray')}
                             >
-                                <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600">
+                                <div className="w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center">
                                     {social.name === 'github' && <FontAwesomeIcon icon={faGithub} beatFade size="2x" />}
                                     {social.name === 'linkedin' && <FontAwesomeIcon icon={faLinkedin} beatFade size="2x" />}
                                     {social.name === 'whatsapp' && <FontAwesomeIcon icon={faWhatsapp} beatFade size="2x" />}
