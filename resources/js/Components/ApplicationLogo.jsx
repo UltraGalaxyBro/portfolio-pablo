@@ -1,7 +1,8 @@
-export default function ApplicationLogo() {
+export default function ApplicationLogo({ size = "w-10 h-10", textSize = "text-xl" }) {
     return (
-        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
-            <span className="text-white text-xl font-bold">P</span>
+        <div className={`${size} bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center`}>
+            <span className={`text-white ${textSize} font-bold`}>P</span>
         </div>
     );
 }
+

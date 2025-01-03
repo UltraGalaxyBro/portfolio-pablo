@@ -24,7 +24,7 @@ const PortfolioLayout = ({ auth, children }) => {
                     <div className="container mx-auto px-4">
                         <div className="flex items-center justify-between h-20">
                             <div className="flex items-center">
-                                <Link href={route('welcome')} className="flex items-center space-x-2">
+                                <Link href={route('welcome')} title='Página principal' className="flex items-center space-x-2">
                                     <ApplicationLogo />
                                 </Link>
                             </div>
